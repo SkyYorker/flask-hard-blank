@@ -17,8 +17,8 @@ class MovieService:
     def all_movies(self):
         return self.movie_dao.get_all_movie()
     
-    def put_movie(self):
-        return self.movie_dao.put_movie()
+    def put_movie(self, mid):
+        return self.movie_dao.put_movie(mid)
     
     def get_movies_by_fields(self):
         if 'director_id' in request.args:
@@ -29,6 +29,6 @@ class MovieService:
             return MovieDAO.get_movies_by_year(self)
         return MovieDAO.get_all_movie(self)
     
-    def delete_movie(self):
-        return self.movie_dao.delete_movie()
+    def delete_movie(self, mid):
+        return self.movie_dao.delete_movie(mid)
 
