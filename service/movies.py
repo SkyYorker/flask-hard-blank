@@ -8,15 +8,15 @@ class MovieService:
     def __init__(self, movie_dao: MovieDAO):
         self.movie_dao = movie_dao
         
+    def get_all_movies(self):
+        return self.movie_dao.get_all_movies()
+
+    def get_movie_by_id(self, mid):
+        return self.movie_dao.get_movie_by_id(mid)
+
     def add_movie(self):
         return self.movie_dao.add_movie()
         
-    def get_movie_by_id(self, mid):
-        return self.movie_dao.get_movie_by_id(mid)   
-        
-    def all_movies(self):
-        return self.movie_dao.get_all_movie()
-    
     def put_movie(self, mid):
         return self.movie_dao.put_movie(mid)
     

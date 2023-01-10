@@ -1,6 +1,6 @@
 
 from flask_restx import Resource, Namespace
-from flask import request
+from flask import jsonify, request
 from container import movie_service
 
 movies_ns = Namespace('movies')
@@ -11,8 +11,8 @@ class MoviesView(Resource):
     def get(self):
         if request.args:
             return movie_service.get_movies_by_fields(), 200
-        return movie_service.all_movies(), 200
-    
+        return movie_service.get_all_movies(), 200
+        
     
     def post(self):
         return movie_service.add_movie(), 201

@@ -5,7 +5,7 @@ from setup_db import db
 
 
 class MovieDAO:
-    def get_all_movie(self):
+    def get_all_movies(self):
         all_movies = Movie.query.all()
         return movies_schema.dump(all_movies)
     

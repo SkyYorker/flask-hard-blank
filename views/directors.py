@@ -1,5 +1,4 @@
 from flask_restx import Resource, Namespace
-from dao.directors import DirectorDAO
 from container import director_service
 
 directors_ns = Namespace('directors')

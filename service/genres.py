@@ -10,3 +10,12 @@ class GenreService:
     
     def get_genre_by_id(self, gid):
         return self.genre_dao.get_genre_by_id(gid)
+
+    def add_genre(self):
+        return self.genre_dao.add_genre()
+
+    def put_genre(self):
+        return self.genre_dao.put_genre()
+
+    def delete_genre(self):
+        return self.genre_dao.delete_genre()
