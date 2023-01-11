@@ -1,4 +1,4 @@
-from calendar import calendar
+import calendar
 import datetime
 from constants import JWT_ALGO, JWT_SECRET
 from service.users import UserService
@@ -15,13 +15,13 @@ class AuthService:
             raise Exception("Не найден пользователь")
 
         if not is_refresh:
-            if not self.user_service.compare_password(password, user.password):
+            if not self.user_service.compare_password(user["password"], password):
                 raise Exception('Не верный пароль')
 
 
         data = {
-            'username': user.username,
-            'role': user.role
+            'username': user["username"],
+            'role': user["role"]
             
         }
 

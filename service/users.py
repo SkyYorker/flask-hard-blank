@@ -17,7 +17,7 @@ class UserService:
             PWD_HASH_ITERATIONS
         ))
 
-    def compare_password(self, password, password_hash):
+    def compare_password(self, password_hash, password):
         string_hash_1 = password_hash
         string_hash_2 = self.get_hash(password)
         print(string_hash_1, string_hash_2)
