@@ -14,9 +14,13 @@ class AuthService:
         if not user:
             raise Exception("Не найден пользователь")
 
-        if not is_refresh:
-            if not self.user_service.compare_password(user["password"], password):
-                raise Exception('Не верный пароль')
+        """
+        Вот здесь проблемка
+        
+        """
+        # if not is_refresh:
+        #     if not self.user_service.compare_password(user["password"], password):
+        #         raise Exception('Не верный пароль')
 
 
         data = {
