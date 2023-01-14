@@ -8,7 +8,7 @@ from views.movies import movies_ns
 from views.directors import directors_ns
 from views.genres import genres_ns
 from views.users import user_ns
-from views.users import auth_ns
+from views.auth import auth_ns
 
 def create_app(config_object):
     app = Flask(__name__)

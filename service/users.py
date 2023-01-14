@@ -17,7 +17,7 @@ class UserService:
             PWD_HASH_ITERATIONS
         ))
 
-    def compare_password(self, password_hash, password):
+    def compare_password(self, password, password_hash):
         string_hash_1 = password_hash
         string_hash_2 = self.get_hash(password)
         print(string_hash_1, string_hash_2)
@@ -43,5 +43,5 @@ class UserService:
     def put_user(self):
         return self.user_dao.put_user()
 
-    def delete_user(self):
-        return self.user_dao.delete_user()
+    def delete_user(self,uid):
+        return self.user_dao.delete_user(uid)

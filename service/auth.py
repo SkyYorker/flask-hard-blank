@@ -18,9 +18,9 @@ class AuthService:
         Вот здесь проблемка
         
         """
-        # if not is_refresh:
-        #     if not self.user_service.compare_password(user["password"], password):
-        #         raise Exception('Не верный пароль')
+        if not is_refresh:
+            if not self.user_service.compare_password(password, user["password"]):
+                raise Exception('Не верный пароль')
 
 
         data = {
@@ -47,4 +47,4 @@ class AuthService:
         if not user:
             raise Exception("плохой токен")
 
-        return self.generate_token(username, user.password,is_refresh=True)
+        return self.generate_token(username, user["password"],is_refresh=True)
